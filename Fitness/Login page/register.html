@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Register for the Fitness Club to track your fitness journey and achieve your goals.">
+    <meta name="author" content="Your Name">
+    <title>Create an Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h1>Create an Account</h1>
+            <form action="register" method="POST">
+                <div class="form-wrapper">
+                    <!-- Left Column -->
+                    <div class="form-column">
+                        <!-- First Name -->
+                        <div class="form-group">
+                            <label for="First-name">First Name</label>
+                            <input type="text" id="First-name" name="First-name" placeholder="Enter your First Name" required>
+                        </div>
+                        <!-- Last Name -->
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last_name" placeholder="Enter your Last Name" required>
+                        </div>
+                        <!-- Gender -->
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+                        </div>
+                        <!-- Mobile Number -->
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="tel" id="mobile" name="mobile" placeholder="Enter your Mobile Number" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="form-column">
+                        <!-- Date of Birth -->
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                        <!-- Weight -->
+                        <div class="form-group">
+                            <label for="weight">Weight (in kg)</label>
+                            <input type="number" id="weight" name="weight" placeholder="Enter your Weight" step="0.1" required>
+                        </div>
+                        <!-- Height -->
+                        <div class="form-group">
+                            <label for="height">Height (in cm)</label>
+                            <input type="number" id="height" name="height" placeholder="Enter your Height" step="0.1" required>
+                        </div>
+                        <!-- Fitness Goals -->
+                        <div class="form-group">
+                            <label for="fitness-goals">Fitness Goals</label>
+                            <textarea id="fitness-goals" name="fitness_goals" placeholder="Describe your Fitness Goals" rows="4"></textarea>
+                        </div>
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Create a Password" required minlength="8">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Button -->
+                <button type="submit">Register</button>
+
+                <!-- Login Link -->
+                <p class="login-link">
+                    Already have an account? <a href="index.html">Login here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

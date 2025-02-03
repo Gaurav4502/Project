@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to the Fitness Club to access your dashboard and track fitness goals.">
+    <meta name="author" content="Your Name">
+    <title>Fitness Club - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="fitness_web_application_logo.png" alt="Fitness Club Logo">
+            </div>
+
+            <h1>Welcome Back</h1>
+            <p>Log in to continue your fitness journey.</p>
+
+            <!-- Login Form -->
+            <form action="login" method="POST" id="loginForm" aria-labelledby="loginFormTitle">
+                <!-- Username Field -->
+                <div class="form-group">
+                    <label for="username" aria-label="Username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Enter your username" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="usernameHelp"
+                    >
+                    <small id="usernameHelp" class="form-text">Enter the username associated with your account.</small>
+                </div>
+                
+                <!-- Password Field -->
+                <div class="form-group">
+                    <label for="password" aria-label="Password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password" 
+                        required 
+                        aria-required="true"
+                        aria-describedby="passwordHelp"
+                    >
+                    <small id="passwordHelp" class="form-text">Enter your password to log in.</small>
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" aria-label="Log In">Log In</button>
+                
+                <!-- Create Account Link -->
+                <p class="create-account">
+                    Don't have an account? <a href="register.html" aria-label="Sign Up">Sign Up</a>
+                </p>
+            </form>
+            
+            <!-- Active Users Section -->
+            <div id="active-users" aria-live="polite">
+                <p>Active Users: <span id="user-count">Loading...</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function fetchActiveUsers() {
+            try {
+                const response = await fetch('/userCount');
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('user-count').innerText = data.activeUsers;
+                } else {
+                    document.getElementById('user-count').innerText = 'Error';
+                }
+            } catch (error) {
+                console.error('Failed to fetch active users:', error);
+                document.getElementById('user-count').innerText = 'Error';
+            }
+        }
+
+        setInterval(fetchActiveUsers, 5000);  // Update active users every 5 seconds
+        fetchActiveUsers();  // Initial fetch
+    </script>
+</body>
+</html>

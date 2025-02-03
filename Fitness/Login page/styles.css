@@ -1,0 +1,139 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Logo Styles */
+.logo img {
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    height: auto;    /* Maintain aspect ratio */
+    width: 100px;    /* Set a specific width to make it smaller */
+    display: block;  /* Center the image */
+    margin: 0 auto;  /* Center it horizontally */
+}
+
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Common Box Styles (Login & Register) */
+.login-box,
+.register-box {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+.login-box h1,
+.register-box h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2a5298;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 8px rgba(42, 82, 152, 0.2);
+}
+
+textarea {
+    resize: none;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    background: #2a5298;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+/* Link Styles */
+p a {
+    color: #2a5298;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #1e3c72;
+}
+
+/* Two-Column Form (Register Page) */
+.form-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-wrapper {
+        flex-direction: column;
+    }
+}
